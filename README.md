@@ -68,3 +68,14 @@ Import this GitHub repository in Vercel and use the repository root as the proje
 ## License
 
 No license has been added yet. Decide the project's licensing terms before accepting outside contributions or distributing the source broadly.
+
+## Implemented toolkit pages (current release)
+
+- `tools.html`: quadratic equations (including complex roots), selected introductory physics formulas, common unit conversions including temperature, approximate molar masses for common elements, numerical derivative and Simpson-rule integral of a cubic polynomial.
+- `graph.html`: local 2D plotting for cubic-or-lower polynomials with adjustable x/y bounds.
+- `linear.html`: 2×2 matrix determinant/inverse/transpose and 3D vector dot/cross products, magnitudes and angle.
+- All of these pages are linked from the calculator and included in the service-worker cache.
+
+## Still outstanding before calling the full specification complete
+
+The current release is a useful prototype, not yet a validated engineering-grade scientific package. It does not yet include symbolic calculus, general equation systems, arbitrary matrix dimensions, complex-number arithmetic in the main expression engine, 3D/implicit graphing, broad physics/chemistry databases, chemical reaction balancing, dimensional analysis, persistent history, or automated browser/unit-test coverage. The numerical tools must be independently tested before being relied on for academic assessment or real-world engineering.
