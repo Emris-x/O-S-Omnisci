@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090b">
+  <meta name="description" content="O-S Omnisci — an offline-first scientific calculator, built for curious minds.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>O-S — Omnisci</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Omnisci home">
+        <span class="brand-mark" aria-hidden="true">O<span>−</span>S</span>
+        <span class="brand-copy"><strong>OMNISCI</strong><small>SCIENTIFIC WORKSPACE</small></span>
+      </a>
+      <div class="topbar-actions">
+        <span class="offline-indicator"><i></i><span id="connection-label">LOCAL ENGINE</span></span>
+        <button class="icon-button" id="angle-toggle" aria-label="Toggle angle unit" title="Toggle degrees/radians">DEG</button>
+      </div>
+    </header>
+
+    <section class="workspace" aria-label="Scientific calculator">
+      <div class="workspace-heading">
+        <div><p class="eyebrow">CALCULATION ENGINE <span> / 01</span></p><h1>Think beyond<br><em>the obvious.</em></h1></div>
+        <span class="version-tag">PREVIEW 0.1</span>
+      </div>
+
+      <section class="calculator panel" aria-label="Calculator">
+        <div class="display">
+          <div class="display-meta"><span id="mode-label">BASIC MODE</span><span id="history-count">READY</span></div>
+          <div class="expression" id="expression" aria-label="Expression" role="textbox" aria-readonly="true">0</div>
+          <div class="result-row"><span class="result-equals">=</span><output id="result" aria-live="polite">0</output></div>
+          <p class="display-hint" id="display-hint">Enter an expression to begin</p>
+        </div>
+        <div class="mode-tabs" role="tablist" aria-label="Keypad mode">
+          <button class="mode-tab active" data-mode="basic" role="tab" aria-selected="true">BASIC</button>
+          <button class="mode-tab" data-mode="sci" role="tab" aria-selected="false">SCI</button>
+          <button class="mode-tab" data-mode="symbols" role="tab" aria-selected="false">SYMBOLS</button>
+        </div>
+        <div id="keypad" class="keypad" aria-label="Calculator keys"></div>
+        <div class="calculator-footer"><span><kbd>Enter</kbd> calculate</span><span><kbd>Esc</kbd> clear</span><span>LOCAL · PRIVATE · OFFLINE</span></div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel feature-card">
+          <div class="feature-icon">∑</div><p class="eyebrow">BUILT FOR LEARNING</p><h2>More than an answer.</h2>
+          <p>Omnisci is being built as a transparent scientific workspace. The calculator runs locally, without sending your expressions to a server.</p>
+          <div class="feature-status"><span class="status-dot"></span> Local calculation engine <span class="status-label">ACTIVE</span></div>
+        </article>
+        <article class="panel history-card">
+          <div class="history-heading"><div><p class="eyebrow">YOUR SESSION</p><h2>Recent calculations</h2></div><button id="clear-history" class="text-button">CLEAR</button></div>
+          <div id="history-list" class="history-list"><p class="empty-history">Your calculations will appear here.</p></div>
+        </article>
+      </section>
+      <footer class="page-footer"><span>O-S / OMNISCI</span><span>MADE FOR THE CURIOUS.</span><span>V0.1.0</span></footer>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
